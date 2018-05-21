@@ -579,6 +579,17 @@ public class AutowiredAnnotationBeanPostProcessor extends InstantiationAwareBean
 							break;
 						}
 					}
+					
+					{
+						StringBuilder sb = new StringBuilder();
+						sb.append(beanName);
+						sb.append(" ==depends on==>");
+						sb.append(autowiredBeanNames);
+						String log = sb.toString();
+						System.out.println(log);
+						
+					}
+					
 					synchronized (this) {
 						if (!this.cached) {
 							if (arguments != null) {
